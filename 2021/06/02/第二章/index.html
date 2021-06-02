@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <title>第二章 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实这是个测试页">
+  <meta name="description" content="### Kubernetes是什么 Kubernetes是Google 2014年创建管理的，是Google 10多年大规模容器管理技术Borg的开源版本。 #### kubernetes特点 可移植:支持公有云，私有云，混合云，多重云（multi-cloud） 可扩展:模块化, 插件化, 可挂载, 可组合 自动化:自动部署，自动重启，自动复制，自动伸缩&#x2F;扩展 #### 容器优势总结 快速创建&#x2F;部">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="第二章">
 <meta property="og:url" content="http://example.com/2021/06/02/%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="其实这是个测试页">
+<meta property="og:description" content="### Kubernetes是什么 Kubernetes是Google 2014年创建管理的，是Google 10多年大规模容器管理技术Borg的开源版本。 #### kubernetes特点 可移植:支持公有云，私有云，混合云，多重云（multi-cloud） 可扩展:模块化, 插件化, 可挂载, 可组合 自动化:自动部署，自动重启，自动复制，自动伸缩&#x2F;扩展 #### 容器优势总结 快速创建&#x2F;部">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-06-02T06:19:59.744Z">
-<meta property="article:modified_time" content="2021-06-02T06:20:30.189Z">
+<meta property="article:published_time" content="2021-06-02T06:12:25.000Z">
+<meta property="article:modified_time" content="2021-06-02T06:24:04.035Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -157,9 +157,127 @@
             <article id="post-第二章" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第二章
+    </h1>
+  
+
+        
+        <a href="/2021/06/02/%E7%AC%AC%E4%BA%8C%E7%AB%A0/" class="archive-article-date">
+  	<time datetime="2021-06-02T06:12:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-02</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实这是个测试页</p>
+        <p>### Kubernetes是什么</p>
+<p>Kubernetes是Google 2014年创建管理的，是Google 10多年大规模容器管理技术Borg的开源版本。</p>
+<p>#### kubernetes特点</p>
+<p><strong>可移植</strong>:支持公有云，私有云，混合云，多重云（multi-cloud）</p>
+<p><strong>可扩展</strong>:模块化, 插件化, 可挂载, 可组合</p>
+<p><strong>自动化</strong>:自动部署，自动重启，自动复制，自动伸缩/扩展</p>
+<p>#### 容器优势总结</p>
+<p><strong>快速创建/部署应用</strong>：与VM虚拟机相比，容器镜像的创建更加容易。</p>
+<p><strong>持续开发、集成和部署</strong>：提供可靠且频繁的容器镜像构建/部署，并使用快速和简单的回滚(由于镜像不可变性)。</p>
+<p><strong>开发和运行相分离</strong>：在build或者release阶段创建容器镜像，使得应用和基础设施解耦。</p>
+<p><strong>开发，测试和生产环境一致性</strong>：在本地或外网（生产环境）运行的一致性。</p>
+<p><strong>云平台或其他操作系统</strong>：可以在 Ubuntu、RHEL、 CoreOS、on-prem、Google Container Engine或其它任何环境中运行。</p>
+<p><strong>Loosely coupled，分布式，弹性，微服务化</strong>：应用程序分为更小的、独立的部件，可以动态部署和管理。</p>
+<p><strong>资源隔离</strong></p>
+<p><strong>资源利用</strong>：更高效</p>
+<p>#### 使用Kubernetes能做什么？</p>
+<p>可以在物理或虚拟机的Kubernetes集群上运行容器化应用，Kubernetes能提供一个以“容器为中心的基础架构”，满足在生产环境中运行应用的一些常见需求，如：</p>
+<p>* 多个进程（作为容器运行）协同工作。（Pod）</p>
+<p>* 存储系统挂载</p>
+<p>* Distributing secrets</p>
+<p>* 应用健康检测</p>
+<p>* 应用实例的复制</p>
+<p>* Pod自动伸缩/扩展</p>
+<p>* Naming and discovering</p>
+<p>* 负载均衡</p>
+<p>* 滚动更新</p>
+<p>* 资源监控</p>
+<p>* 日志访问</p>
+<p>* 调试应用程序</p>
+<p>* 提供认证和授权</p>
+<p>#### Kubernetes不是什么？</p>
+<p>* Kubernetes并不是传统的PaaS（平台即服务）系统。</p>
+<p>* Kubernetes不限制支持应用的类型，不限制应用框架。不限制受支持的语言runtimes (例如, Java, Python, Ruby)，满足12-factor applications 。不区分 “apps” 或者“services”。 Kubernetes支持不同负载应用，包括有状态、无状态、数据处理类型的应用。只要这个应用可以在容器里运行，那么就能很好的运行在Kubernetes上。</p>
+<p>* Kubernetes不提供中间件（如message buses）、数据处理框架（如Spark）、数据库(如Mysql)或者集群存储系统(如Ceph)作为内置服务。但这些应用都可以运行在Kubernetes上面。</p>
+<p>* Kubernetes不部署源码不编译应用。持续集成的 (CI)工作流方面，不同的用户有不同的需求和偏好的区域，因此，我们提供分层的 CI工作流，但并不定义它应该如何工作。</p>
+<p>* Kubernetes允许用户选择自己的日志、监控和报警系统。</p>
+<p>* Kubernetes不提供或授权一个全面的应用程序配置 语言/系统（例如，jsonnet）。</p>
+<p>* Kubernetes不提供任何机器配置、维护、管理或者自修复系统。</p>
+<p>### Kubernetes组件</p>
+<p>#### Master 组件</p>
+<p>Master组件提供集群的管理控制中心。</p>
+<p>Master组件可以在集群中任何节点上运行。但是为了简单起见，通常在一台VM/机器上启动所有Master组件，并且不会在此VM/机器上运行用户容器。请参考<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/high-availability">构建高可用群集</a>以来构建multi-master-VM。</p>
+<p>##### kube-apiserver</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/kube-apiserver">kube-apiserver</a>用于暴露Kubernetes API。任何的资源请求/调用操作都是通过kube-apiserver提供的接口进行。请参阅<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/high-availability">构建高可用群集</a>。</p>
+<p>##### ETCD</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/etcd">etcd</a>是Kubernetes提供默认的存储系统，保存所有集群数据，使用时需要为etcd数据提供备份计划。</p>
+<p>##### kube-controller-manager</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/kube-controller-manager">kube-controller-manager</a>运行管理控制器，它们是集群中处理常规任务的后台线程。逻辑上，每个控制器是一个单独的进程，但为了降低复杂性，它们都被编译成单个二进制文件，并在单个进程中运行。</p>
+<p>这些控制器包括：</p>
+<p>* 节点（Node）控制器。</p>
+<p>* 副本（Replication）控制器：负责维护系统中每个副本中的pod。</p>
+<p>* 端点（Endpoints）控制器：填充Endpoints对象（即连接Services＆Pods）。</p>
+<p>* Service Account和Token控制器：为新的Namespace 创建默认帐户访问API Token。</p>
+<p>##### cloud-controller-manager</p>
+<p>云控制器管理器负责与底层云提供商的平台交互。云控制器管理器是Kubernetes版本1.6中引入的，目前还是Alpha的功能。</p>
+<p>云控制器管理器仅运行云提供商特定的（controller loops）控制器循环。可以通过将–cloud-provider flag设置为external启动kube-controller-manager ，来禁用控制器循环。</p>
+<p>cloud-controller-manager 具体功能：</p>
+<p>* 节点（Node）控制器</p>
+<p>* 路由（Route）控制器</p>
+<p>* Service控制器</p>
+<p>* 卷（Volume）控制器</p>
+<p>#### kube-scheduler</p>
+<p>kube-scheduler监视新创建没有分配到Node的Pod，为Pod选择一个Node。</p>
+<p>##### 插件 addons</p>
+<p>插件（addon）是实现集群pod和Services功能的 。Pod由Deployments，ReplicationController等进行管理。Namespace 插件对象是在kube-system Namespace中创</p>
+<p>##### DNS</p>
+<p>虽然不严格要求使用插件，但Kubernetes集群都应该具有集群 DNS。</p>
+<p>群集 DNS是一个DNS服务器，能够为 Kubernetes services提供 DNS记录。</p>
+<p>由Kubernetes启动的容器自动将这个DNS服务器包含在他们的DNS searches中。了解更多详情</p>
+<p>##### 用户界面</p>
+<p>kube-ui提供集群状态基础信息查看。更多详细信息，请参阅<a target="_blank" rel="noopener" href="https://kubernetes.io/docs/tasks/access-kubernetes-api/http-proxy-access-api/">使用HTTP代理访问Kubernetes API</a></p>
+<p>##### 容器资源监测</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/user-guide/monitoring">容器资源监控</a>提供一个UI浏览监控数据。</p>
+<p>##### Cluster-level Logging</p>
+<p>Cluster-level logging，负责保存容器日志，搜索/查看日志。</p>
+<p>#### 节点（Node）组件</p>
+<p>节点组件运行在<a target="_blank" rel="noopener" href="http://docs.kubernetes.org.cn/304.html">Node</a>，提供Kubernetes运行时环境，以及维护Pod。</p>
+<p>##### kubelet</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/kubelet">kubelet</a>是主要的节点代理，它会监视已分配给节点的pod，具体功能：</p>
+<p>* 安装Pod所需的volume。</p>
+<p>* 下载Pod的Secrets。</p>
+<p>* Pod中运行的 docker（或experimentally，rkt）容器。</p>
+<p>* 定期执行容器健康检查。</p>
+<p>* Reports the status of the pod back to the rest of the system, by creating a mirror pod if necessary.</p>
+<p>* Reports the status of the node back to the rest of the system.</p>
+<p>##### kube-proxy</p>
+<p><a target="_blank" rel="noopener" href="https://kubernetes.io/docs/admin/kube-proxy">kube-proxy</a>通过在主机上维护网络规则并执行连接转发来实现Kubernetes服务抽象。</p>
+<p>##### docker</p>
+<p>docker用于运行容器。</p>
+<p>##### RKT</p>
+<p>rkt运行容器，作为docker工具的替代方案。</p>
+<p>##### supervisord</p>
+<p>supervisord是一个轻量级的监控系统，用于保障kubelet和docker运行。</p>
+<p>##### fluentd</p>
+<p>fluentd是一个守护进程，可提供cluster-level logging。</p>
+<p>### 了解Kubernetes对象</p>
+<p>Kubernetes对象是Kubernetes系统中的持久实体。Kubernetes使用这些实体来表示集群的状态。具体来说，他们可以描述：</p>
+<p>* 容器化应用正在运行(以及在哪些节点上)</p>
+<p>* 这些应用可用的资源</p>
+<p>* 关于这些应用如何运行的策略，如重新策略，升级和容错</p>
+<p>Kubernetes对象是“record of intent”，一旦创建了对象，Kubernetes系统会确保对象存在。通过创建对象，可以有效地告诉Kubernetes系统你希望集群的工作负载是什么样的。</p>
+<p>要使用Kubernetes对象（无论是创建，修改还是删除），都需要使用Kubernetes API。例如，当使用kubectl命令管理工具时，CLI会为提供Kubernetes API调用。你也可以直接在自己的程序中使用Kubernetes API，Kubernetes提供一个golang客户端库 （其他语言库正在开发中-如Python）。</p>
+<p>###</p>
+<p>对象创建必须提供描述Status的对象Spec，以及关于对象的一些基本信息。当使用Kubernetes</p>
 
       
 
@@ -253,9 +371,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2021/06/02/%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          第一章
+        
+      </div>
+    </a>
   
-    <a href="/2021/06/02/%E7%AC%AC%E4%B8%80%E7%AB%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一章</div>
+  
+    <a href="/2021/06/02/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
